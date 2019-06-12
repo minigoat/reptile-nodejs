@@ -15,18 +15,13 @@ const reptile_dapenti = async function(url) {
 }
 
 const get = (url) => {
-    return Promise.resolve(request.get(url).charset('gbk').end((err, res) => {
-        console.log('superagent-1');
-        console.log('superagent-err', err);
-        if (err) {
-            console.error('reptile_dapenti:::error=', err);
-            result = `抓取depenti图说失败, err:${err}`;
-            return Promise.reject(result);
-        } else {
-            console.log('抓取depenti图说成功');
-            return Promise.resolve(res);
-        }
-    }));
+    return request.get(url).charset('gbk').then(res => {
+        console.log('抓取depenti图说成功');
+        return Promise.resolve(res);
+     })
+     .catch(err => {
+        return Promise.reject(`抓取depenti图说失败, err:${err}`);
+     });
 };
 
 const analyze_dapenti = function(res) {
