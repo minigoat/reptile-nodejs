@@ -5,17 +5,15 @@ const cheerio = require('cheerio');
 const _ = require('lodash');
 
 const reptile_dapenti = async function(url) {
-    console.log('reptile_dapenti-1');
     try {
         let res = await get(url);
         let newsList = await analyze_dapenti(res);
-        // console.log('newsList', newsList);
         console.log('JSON.stringify(newsList)', JSON.stringify(newsList));
         newsList = suppl_unFindIndex(newsList);
         return newsList;
     } catch(error) {
         return error;
-    }    
+    }
 }
 
 const get = (url) => {
