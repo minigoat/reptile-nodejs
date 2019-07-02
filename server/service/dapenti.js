@@ -8,7 +8,9 @@ const reptile_dapenti = async function(url) {
     try {
         let res = await get(url);
         let newsList = await analyze_dapenti(res);
-        console.log('JSON.stringify(newsList)', JSON.stringify(newsList));
+        // console.log('JSON.stringify(newsList)', JSON.stringify(newsList));
+        let tenTitleObj = await analyze_TenTitle(res);
+        console.log('JSON.stringify(tenTitleObj)', JSON.stringify(tenTitleObj));
         newsList = suppl_unFindIndex(newsList);
         return newsList;
     } catch(error) {
@@ -71,6 +73,29 @@ const analyze_dapenti = function(res) {
     });
     newsList.push(news);
     return Promise.resolve(newsList);
+}
+
+const tenTitleRegExp = new RegExp('【10】');
+const analyze_TenTitle = function(res) {
+    let $ = cheerio.load(res.text);
+    let text = $('div.oblog_text').text();
+    let lines = text.split(/\s+/);
+    let tenTitle = '';
+    let tenTitleNextText = '';
+    let getTenFlag = false;
+    for (let line of lines) {
+        if (getTenFlag) {
+            if (line.trim() != "") {
+                tenTitleNextText = line.trim();
+                return Promise.resolve({ tenTitle, tenTitleNextText });
+            }  
+        }
+        if (line.indexOf('广告【10】') > -1) {
+            tenTitle = line.substr(line.indexOf("【"));
+            getTenFlag = true;
+        }               
+    }
+    return Promise.resolve(null);
 }
 
 const suppl_unFindIndex = function(newsList) {
