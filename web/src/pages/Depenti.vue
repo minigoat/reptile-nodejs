@@ -36,7 +36,9 @@
                         </div>
                         <div class="footer_body" style="margin-top: 30px;">
                             <p><span style="font-size: 12px;color: rgb(136, 136, 136);">感谢来源：</span><span style="font-size: 12px;color: rgb(136, 136, 136);">喷嚏网</span><br></p>
-                            <p style="text-align: center;"><img class="rich_pages  __bg_gif" data-copyright="0" data-ratio="0.5859375" data-src="https://mmbiz.qpic.cn/mmbiz/V3df1Cq1lMnHW7AB7HmYT1wjLqCc8jelJCicCa5BPgpjJU9A215d2XhwEKZWOtFs2gAzUGvlzB8ibtMibAfcLdyZQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" data-type="gif" data-w="640" style="width: 640px !important; height: auto !important; visibility: visible !important;" _width="640px" src="https://mmbiz.qpic.cn/mmbiz/V3df1Cq1lMnHW7AB7HmYT1wjLqCc8jelJCicCa5BPgpjJU9A215d2XhwEKZWOtFs2gAzUGvlzB8ibtMibAfcLdyZQ/640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" data-order="0" data-fail="0"></p>
+                            <p style="text-align: center;">
+                                <img class=" __bg_gif" data-copyright="0" data-ratio="0.5859375" data-src="https://mmbiz.qpic.cn/mmbiz/V3df1Cq1lMnHW7AB7HmYT1wjLqCc8jelJCicCa5BPgpjJU9A215d2XhwEKZWOtFs2gAzUGvlzB8ibtMibAfcLdyZQ/640?wx_fmt=gif" data-type="gif" data-w="640" style="width: 640px !important; height: auto !important; visibility: visible !important;" _width="640px" src="https://mmbiz.qpic.cn/mmbiz/V3df1Cq1lMnHW7AB7HmYT1wjLqCc8jelJCicCa5BPgpjJU9A215d2XhwEKZWOtFs2gAzUGvlzB8ibtMibAfcLdyZQ/640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" data-order="0" data-fail="0">
+                            </p>
                         </div>
                     </div>
                 </div>

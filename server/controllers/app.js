@@ -5,7 +5,7 @@ let index = async (ctx, next) => {
 };
 
 let dapenti = async (ctx, next) => {
-    let result = await reptile_dapenti('http://www.dapenti.com/blog/more.asp?name=xilei&id=141531');
+    let result = await reptile_dapenti('http://www.dapenti.com/blog/more.asp?name=xilei&id=141555');
     ctx.response.set({
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "*",

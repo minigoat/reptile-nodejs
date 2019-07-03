@@ -8,10 +8,11 @@ const reptile_dapenti = async function(url) {
     try {
         let res = await get(url);
         let newsList = await analyze_dapenti(res);
-        // console.log('JSON.stringify(newsList)', JSON.stringify(newsList));
+        console.log('JSON.stringify(newsList)', JSON.stringify(newsList));
         let tenTitleObj = await analyze_TenTitle(res);
         console.log('JSON.stringify(tenTitleObj)', JSON.stringify(tenTitleObj));
-        newsList = suppl_unFindIndex(newsList);
+        newsList = add_unFindIndex(newsList, tenTitleObj);
+        // newsList = suppl_unFindIndex(newsList);
         return newsList;
     } catch(error) {
         return error;
@@ -96,6 +97,41 @@ const analyze_TenTitle = function(res) {
         }               
     }
     return Promise.resolve(null);
+}
+
+const add_unFindIndex = function(list, tenTitleObj) {
+    let result = [];
+    _.forEach(list, (news, index) => {
+        if(news.index == '9') {
+            let body = news.body;
+            let nineBody = [];
+            let tenBody = [];
+            let tenFlag = false;
+            _.forEach(body, (itemBody, itemIndex) => {
+                if (itemBody.type == 'text' && itemBody.content == tenTitleObj.tenTitleNextText) {
+                    tenFlag = true;
+                }
+                if (tenFlag) {
+                    tenBody.push(itemBody);
+                } else {
+                    nineBody.push(itemBody);
+                }
+            });
+            result.push({
+                title: news.title,
+                index: '9',
+                body: nineBody
+            });
+            result.push({
+                title: tenTitleObj.tenTitle,
+                index: '10',
+                body: tenBody
+            });
+        } else {
+            result.push(news);
+        }
+    });
+    return result;
 }
 
 const suppl_unFindIndex = function(newsList) {
