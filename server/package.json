@@ -18,5 +18,8 @@
     "lodash": "^4.17.11",
     "superagent": "^5.0.6",
     "superagent-charset": "^1.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }
